@@ -5,13 +5,37 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+		<script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
 		<title>A-Frame</title>
 	</head>
 	<body>
 		<a-scene>
 			<a-assets>
 				<img id="beach" src="./assets/beach.jpeg" />
+				<img id="fb" src="./assets/Facebook.jpg" />
 			</a-assets>
+
+			<a-box
+				id="box"
+				visible="true"
+				position="-1 0.5 -3"
+				rotation="0 45 0"
+				color="#4CC3D9"
+				event-set__enter="_event: click; color: #8FF7FF"
+				event-set__leave="_event: mouseleave; color: #4CC3D9"
+			></a-box>
+
+			<a-sphere
+				position="2 0.5 -3"
+				radius="0.5"
+				color="#26235d"
+				event-set__hidebox="_event: click; _target: #box; visible: false"
+				event-set__showbox="_event: mouseleave; _target: #box; visible: true"
+			></a-sphere>
+
+			<a-camera>
+				<a-cursor></a-cursor>
+			</a-camera>
 
 			<a-sky src="#beach"></a-sky>
 		</a-scene>
