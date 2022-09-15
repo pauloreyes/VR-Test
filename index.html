@@ -18,6 +18,22 @@
 					});
 				},
 			});
+
+			AFRAME.registerComponent("audiohandler", {
+				init: function () {
+					let playing = false;
+					let audio = document.querySelector("#Intro");
+					this.el.addEventListener("click", () => {
+						if (!playing) {
+							audio.play();
+						} else {
+							audio.pause();
+							audio.currentTime = 0;
+						}
+						playing = !playing;
+					});
+				},
+			});
 		</script>
 
 		<a-scene>
@@ -31,11 +47,13 @@
 
 			<a-sphere color="red" position="10 0 -10" mylink="href: room2.html"></a-sphere>
 
+			<a-box audiohandler color="black" position="-5 0 -5"> </a-box>
+
 			<a-plane
 				material="color:blue"
 				scale="1 1 1"
-				position="0 1.5 -1"
-				sound="src: #Intro; volume:0.4; on:click"
+				position="0 1.5 -2"
+				sound="src: #Intro; on:click; volume:0.4"
 			></a-plane>
 
 			<!-- event-set__click="_event: click; visible: false" -->
