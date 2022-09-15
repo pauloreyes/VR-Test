@@ -18,14 +18,6 @@
 					});
 				},
 			});
-
-			AFRAME.registerComponent("audioPlay", {
-				init: function () {
-					this.el.addEventListener("click", (e) => {
-						window.location = this.data.href;
-					});
-				},
-			});
 		</script>
 
 		<a-scene>
@@ -40,12 +32,14 @@
 			<a-sphere color="red" position="10 0 -10" mylink="href: room2.html"></a-sphere>
 
 			<a-plane
-				material="color:red"
+				material="color:blue"
 				scale="1 1 1"
 				position="0 1.5 -1"
-				sound="src: #Intro; autoplay: false; volume:0.4; on:click"
+				sound="src: #Intro; volume:0.4; on:click"
 				event-set__click="_event: click; visible: false"
 			></a-plane>
+
+			<!-- event-set__click="_event: click; visible: false" -->
 
 			<a-camera>
 				<a-entity
