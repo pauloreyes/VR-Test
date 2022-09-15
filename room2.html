@@ -6,34 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 		<script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
-
 		<title>A-Frame</title>
 	</head>
 	<body>
-		<script>
-			AFRAME.registerComponent("mylink", {
-				init: function () {
-					this.el.addEventListener("click", (e) => {
-						window.location = this.data.href;
-					});
-				},
-			});
-
-			let source = "./assets/Intro.mp3";
-			let audio = document.createElement("audio");
-			audio.autoplay = true;
-			audio.volume = 0.2;
-			audio.load();
-			audio.addEventListener(
-				"load",
-				function () {
-					audio.play();
-				},
-				true
-			);
-			audio.src = source;
-		</script>
-
 		<a-scene>
 			<a-assets>
 				<img id="beach" src="./assets/beach.jpeg" />
@@ -41,9 +16,6 @@
 				<img id="office" src="./assets/Office.jpg" />
 				<a-asset-item id="boatModel" src="./assets/Boat.obj"></a-asset-item>
 			</a-assets>
-
-			<!-- <a-sphere color="red" position="10 0 -10" mylink="href: room2.html"></a-sphere>
-			<a-box color="blue" position="-10 0 -10" sound="src:#Intro; on: click"></a-box> -->
 
 			<a-camera>
 				<a-entity
@@ -57,7 +29,7 @@
 				></a-entity>
 			</a-camera>
 
-			<a-sky src="#office"></a-sky>
+			<a-sky src="#beach"></a-sky>
 		</a-scene>
 	</body>
 </html>
