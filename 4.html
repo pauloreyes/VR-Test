@@ -9,10 +9,41 @@
 		<title>A-Frame</title>
 	</head>
 	<body>
+		<script>
+			AFRAME.registerComponent("1-link", {
+				init: function () {
+					this.el.addEventListener("click", (e) => {
+						window.location = this.data.href;
+					});
+				},
+			});
+		</script>
+
 		<a-scene>
 			<a-assets>
 				<img id="point4" src="./assets/bottom_point4.jpeg" />
+				<img id="vr-map4" src="./assets/VR-Map4.png" />
 			</a-assets>
+
+			<a-circle
+				position="12.315 1.398 -1.638"
+				color="#6CC049"
+				scale="0.1 0.1 0.1"
+				rotation="0 -60 -2.4"
+                1-link="href: index.html"
+				><a-entity text="value: 1; color: white; align: center" scale="45 45 45"></a-entity
+			></a-circle>
+
+			<!--  -->
+
+			<a-plane
+				color="white"
+				position="12.405 1 -1.673"
+				scale="10 6 0.2"
+				rotation="0 -59 -2.4"
+				src="#vr-map4"
+				></a-circle
+			></a-plane>
 
 			<a-camera>
 				<a-entity
@@ -20,7 +51,7 @@
 					animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1500; from: 0.03 0.03 0.03; to: 0.01 0.01 0.01"
 					animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 0.03 0.03 0.03"
 					cursor="fuse: true;"
-					material="color: #white; shader: flat"
+					material="color: lightgrey; shader: flat"
 					position="0 0 -1"
 					geometry="primitive: ring"
 				></a-entity>
