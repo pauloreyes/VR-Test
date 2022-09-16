@@ -42,21 +42,43 @@
 				<img id="office" src="./assets/Office.jpg" />
 				<img id="hallway" src="./assets/hallway_point1.jpeg" />
 				<img id="point4" src="./assets/bottom_point4.jpeg" />
+				<img id="map1" src="./assets/VR-Map-1.png" />
 			</a-assets>
 
-			<a-plane color="red" position="-2 1.5 -2" mylink="href: room2.html"
+			<!-- <a-plane
+				color="red"
+				position="-17.5 1.5 -2"
+				rotation="0 90 0"
+				scale="3 3 1"
+				mylink="href: room2.html"
 				><a-entity
 					text="value: Next scene; color: white; align: center"
-					scale="2 2 2"
+					scale="3 3 3"
 				></a-entity
+			></a-plane> -->
+
+			<a-circle
+				position="4 1.573 -4.240"
+				color="green"
+				scale="0.08 0.08 0.08"
+				mylink="href: room2.html"
+				><a-entity text="value: 4; color: white; align: center" scale="30 30 30"></a-entity
+			></a-circle>
+
+			<a-plane
+				color="white"
+				position="2.8 2 -5"
+				scale="5 3 0.2"
+				rotation="0 -20 0"
+				src="#map1"
 			></a-plane>
 
-			<a-plane audiohandler color="#26235d" position="2 1.5 -2"
+			<!-- <a-plane audiohandler color="#26235d" position="2 1.5 -2"
 				><a-entity
 					text="value: Click me to Start.; color: white; align: center"
 					scale="2 2 2"
 				></a-entity
-			></a-plane>
+			></a-plane> -->
 
 			<a-camera>
 				<a-entity
@@ -64,7 +86,7 @@
 					animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1500; from: 0.03 0.03 0.03; to: 0.01 0.01 0.01"
 					animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 0.03 0.03 0.03"
 					cursor="fuse: true;"
-					material="color: #white; shader: flat"
+					material="color: lightgrey; shader: flat"
 					position="0 0 -1"
 					geometry="primitive: ring"
 				></a-entity>
