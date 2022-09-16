@@ -45,15 +45,18 @@
 				<a-asset-item id="boatModel" src="./assets/Boat.obj"></a-asset-item>
 			</a-assets>
 
-			<a-sphere color="red" position="10 0 -10" mylink="href: room2.html"></a-sphere>
+			<a-plane color="red" position="-2 1.5 -2" mylink="href: room2.html"
+				><a-entity
+					text="value: Next scene; color: white; align: center"
+					scale="2 2 2"
+				></a-entity
+			></a-plane>
 
-			<a-box audiohandler color="black" position="-5 0 -5"> </a-box>
-
-			<a-plane
-				material="color:blue"
-				scale="1 1 1"
-				position="0 1.5 -2"
-				sound="src: #Intro; on:click; volume:0.4"
+			<a-plane audiohandler color="#26235d" position="2 1.5 -2"
+				><a-entity
+					text="value: Click me to Start.; color: white; align: center"
+					scale="2 2 2"
+				></a-entity
 			></a-plane>
 
 			<!-- event-set__click="_event: click; visible: false" -->
