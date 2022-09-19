@@ -6,66 +6,39 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 		<script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
-
-		<title>Sutherland VR</title>
+		<title>A-Frame</title>
 	</head>
 	<body>
 		<script>
-			AFRAME.registerComponent("mylink", {
+			AFRAME.registerComponent("1-link", {
 				init: function () {
 					this.el.addEventListener("click", (e) => {
 						window.location = this.data.href;
 					});
 				},
 			});
-
-			AFRAME.registerComponent("audiohandler", {
-				init: function () {
-					let playing = false;
-					let audio = document.querySelector("#Intro");
-					this.el.addEventListener("click", () => {
-						if (!playing) {
-							audio.play();
-						} else {
-							audio.pause();
-							audio.currentTime = 0;
-						}
-						playing = !playing;
-					});
-				},
-			});
 		</script>
 
-		<a-scene loading-screen="dotsColor: #CC3456; backgroundColor: #26235d">
+		<a-scene>
 			<a-assets>
-				<audio id="Intro" src="./assets/Intro.mp3"></audio>
-				<img id="hallway" src="./assets/360-point1.jpg" />
-				<img id="map1" src="./assets/Map-Point1.PNG" />
+				<img id="point4" src="./assets/360-point6.jpg" />
+				<img id="vr-map4" src="./assets/Map-Point6.PNG" />
 			</a-assets>
 
 			<a-box
-				position="4.320 1.712 -4.455"
-				rotation="0 -20 0"
-				material="opacity: 0.0; transparent: true"
-				scale="1 0.6 0.02"
-				mylink="href: 4.html"
-			>
-				></a-box
-			>
-
-			<a-plane color="white" position="2.8 4.1 -5" scale="5 1 0.5" rotation="0 -20 0"
-				><a-entity
-					text="value: Point the reticle to the area on the map that you want to visit.; color: black; align: center"
-					scale="1 2.9 1"
-				></a-entity
-			></a-plane>
+				position="12.315 1.398 -1.638"
+				material="opacity:0.0; transparent: true"
+				scale="1.5 0.75 0.5"
+				rotation="0 -60 -2.4"
+				1-link="href: index.html"
+			></a-box>
 
 			<a-plane
 				color="white"
-				position="2.8 2 -5"
-				scale="5 3 0.5"
-				rotation="0 -20 0"
-				src="#map1"
+				position="12.405 1 -1.673"
+				scale="10 6 0.2"
+				rotation="0 -59 -2.4"
+				src="#vr-map4"
 			></a-plane>
 
 			<a-camera>
@@ -80,7 +53,7 @@
 				></a-entity>
 			</a-camera>
 
-			<a-sky src="#hallway"></a-sky>
+			<a-sky src="#point4"></a-sky>
 		</a-scene>
 	</body>
 </html>
