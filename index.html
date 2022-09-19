@@ -41,74 +41,49 @@
 				<audio id="Intro" src="./assets/Intro.mp3"></audio>
 				<img id="hallway" src="./assets/360-point1.jpg" />
 				<img id="map1" src="./assets/Map-Point1.PNG" />
+				<img id="door2" src="./assets/Room2Door.png" />
+				<img id="door4" src="./assets/Room4Door.png" />
+				<img id="door5" src="./assets/Room5Door.png" />
+				<img id="door6" src="./assets/Room6Door.png" />
 			</a-assets>
 
-			<a-box
-				position="-1.912 -1.723 -0.669"
-				rotation="90 0 0 "
-				material="color: red; opacity: 0.0"
-				scale="1.367 0.6 0.020"
+			<a-image
+				src="#door2"
+				position="9.5 1.352 -0.073"
+				rotation="0 -90 0"
+				scale="1.5 1.5 0"
 				mylink="href: 2.html"
-			></a-box>
+			></a-image>
 
-			<a-box
-				position="1.126 -1.723 0.067"
-				rotation="90 0 0 "
-				material="color: red; opacity: 0.0"
-				scale="1.367 0.6 0.020"
-				mylink="href: 3.html"
-			></a-box>
-
-			<a-box
-				position="1.215 -1.723 -0.504"
-				rotation="90 0 0 "
-				material="color: red; opacity: 0.0"
-				scale="1 0.6 0.02"
+			<a-image
+				src="#door4"
+				position="-14.9 1.585 -2"
+				rotation="0 90 0"
+				scale="1.5 1.5 0"
 				mylink="href: 4.html"
-			></a-box>
+			></a-image>
 
-			<a-box
-				position="1.215 -1.723 -1.493"
-				rotation="90 0 0 "
-				material="color: red; opacity: 0.0"
-				scale="1 0.761 0.02"
-				mylink="href: 5.html"
-			></a-box>
-
-			<a-box
-				position="-1.514 -1.723 -1.493"
-				rotation="90 0 0 "
-				material="color: red; opacity: 0.0"
-				scale="1.99 0.761 0.02"
+			<a-image
+				src="#door6"
+				position="8.357 1.703 0.998"
+				rotation="0 -90 0"
+				scale="0.8 0.8 0"
 				mylink="href: 6.html"
-			></a-box>
+			></a-image>
 
-			<!-- mylink="href: 2.html" -->
-
-			<a-plane
-				color="white"
-				position="-0.645 -2.375 -3.037"
-				scale="5 1 0.5"
-				rotation="-90 180 180"
-				><a-entity
-					text="value: Point the reticle to the area on the map that you want to visit.; color: black; align: center"
-					scale="1 2.9 1"
-				></a-entity
-			></a-plane>
-
-			<a-plane
-				color="white"
-				position="-0.509 -1.732 -0.8"
-				scale="5 2.5 0.5"
-				rotation="-90 180 180"
-				src="#map1"
-			></a-plane>
+			<a-image
+				src="#door5"
+				position="-6.559 1.585 0.516"
+				rotation="0 90 0"
+				scale="0.9 0.9 0"
+				mylink="href: 5.html"
+			></a-image>
 
 			<a-camera>
 				<a-entity
 					animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.01 0.01 0.01; to: 0.03 0.03 0.03"
-					animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1500; from: 0.03 0.03 0.03; to: 0.01 0.01 0.01"
-					animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 0.03 0.03 0.03"
+					animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 0.03 0.03 0.03; to: 0.01 0.01 0.01"
+					animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 1000; to: 0.03 0.03 0.03"
 					cursor="fuse: true;"
 					material="color: lightgrey; shader: flat"
 					position="0 0 -1"
