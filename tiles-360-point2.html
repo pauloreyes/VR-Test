@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+		<script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
+		<title>A-Frame</title>
+	</head>
+	<body>
+		<script>
+			AFRAME.registerComponent("interact", {
+				init: function () {
+					this.el.addEventListener("click", (e) => {
+						window.location = this.data.href;
+					});
+				},
+			});
+		</script>
+
+		<a-scene loading-screen="dotsColor: #CC3456; backgroundColor: #26235d">
+			<a-assets>
+				<img id="point4" src="./assets/alexandria2024-tiles-360-point2.png" />
+				<img id="exit" src="./assets/EXIT.svg" />
+				<img id="movPos" src="./assets/location.svg" />
+			</a-assets>
+
+			<a-image
+				src="#movPos"
+				position="0.90 0.982 -6.023"
+				scale="0.8 0.8 1"
+				rotation="0 0 0"
+				interact="href: tiles-D-360.html"
+			></a-image>
+
+			<a-image
+				src="#movPos"
+				position="13.00 0.515 -4.8"
+				scale="2 2 1"
+				rotation="0 -90 0"
+				interact="href: tiles-A-360.html"
+			></a-image>
+
+			<a-image
+				src="#exit"
+				position="-3.700 1.900 -4.070"
+				scale="0.6 0.6 1"
+				rotation="0 45 0"
+				interact="href: index.html"
+			></a-image>
+
+			<a-camera>
+				<a-entity
+					animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 1500; from: 0.01 0.01 0.01; to: 0.03 0.03 0.03"
+					animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1500; from: 0.03 0.03 0.03; to: 0.01 0.01 0.01"
+					animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 1000; to: 0.03 0.03 0.03"
+					cursor="fuse: true;"
+					material="color: lightgrey; shader: flat"
+					position="0 0 -1"
+					geometry="primitive: ring"
+				></a-entity>
+			</a-camera>
+
+			<a-sky src="#point4" rotation="2.040 39.940 1.680"></a-sky>
+		</a-scene>
+	</body>
+</html>
